@@ -1,6 +1,9 @@
 import 'dart:ui';
 
+import 'package:app/presentation/auth/pages/signup_or_signin.dart';
+import 'package:app/presentation/choose_mode/bloc/theme_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../common/widgets/button/basic_app_button.dart';
 import '../../../core/configs/assets/app_images.dart';
@@ -53,6 +56,11 @@ class ChooseModePage extends StatelessWidget {
                     Column(
                       children: [
                         GestureDetector(
+                          onTap: () {
+                            context
+                                .read<ThemeCubit>()
+                                .updateTheme(ThemeMode.dark);
+                          },
                           child: ClipOval(
                             child: BackdropFilter(
                               filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
@@ -89,6 +97,11 @@ class ChooseModePage extends StatelessWidget {
                     Column(
                       children: [
                         GestureDetector(
+                          onTap: () {
+                            context
+                                .read<ThemeCubit>()
+                                .updateTheme(ThemeMode.light);
+                          },
                           child: ClipOval(
                             child: BackdropFilter(
                               filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
@@ -124,7 +137,16 @@ class ChooseModePage extends StatelessWidget {
                 const SizedBox(
                   height: 50,
                 ),
-                BasicAppButton(height: 80, onPressed: () {}, title: 'Continue')
+                BasicAppButton(
+                    height: 80,
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  const SignupOrSigninPage()));
+                    },
+                    title: 'Continue')
               ],
             ),
           ),
