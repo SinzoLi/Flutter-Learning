@@ -3,6 +3,7 @@ import 'package:app/common/widgets/appbar/app_bar.dart';
 import 'package:app/common/widgets/button/basic_app_button.dart';
 import 'package:app/core/configs/assets/app_images.dart';
 import 'package:app/core/configs/assets/app_vectors.dart';
+import 'package:app/presentation/auth/pages/signin.dart';
 import 'package:app/presentation/auth/pages/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -73,7 +74,13 @@ class SignupOrSigninPage extends StatelessWidget {
                       Expanded(
                           flex: 1,
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          const SigninPage()));
+                            },
                             child: Text(
                               'Sign in',
                               style: TextStyle(
