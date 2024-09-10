@@ -4,7 +4,7 @@ import 'package:app/core/configs/assets/app_vectors.dart';
 import 'package:app/data/models/auth/signin_user_req.dart';
 import 'package:app/domain/usecases/auth/signin.dart';
 import 'package:app/presentation/auth/pages/signup.dart';
-import 'package:app/presentation/root/pages/root.dart';
+import 'package:app/presentation/home/pages/home.dart';
 import 'package:app/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -58,7 +58,7 @@ class SigninPage extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (BuildContext context) =>
-                                const RootPage()),
+                                const HomePage()),
                         (route) => false);
                   });
                 },
