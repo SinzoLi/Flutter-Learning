@@ -3,6 +3,8 @@ import 'package:app/common/widgets/appbar/app_bar.dart';
 import 'package:app/core/configs/assets/app_images.dart';
 import 'package:app/core/configs/assets/app_vectors.dart';
 import 'package:app/core/configs/theme/app_colors.dart';
+import 'package:app/presentation/home/widgets/news_songs.dart';
+import 'package:app/presentation/home/widgets/play_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -37,7 +39,26 @@ class _HomePageState extends State<HomePage>
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [_homeTopCard(), _tabs()],
+          children: [
+            _homeTopCard(),
+            _tabs(),
+            SizedBox(
+              height: 260,
+              child: TabBarView(
+                controller: _tabController,
+                children: [
+                  const NewsSongs(),
+                  Container(),
+                  Container(),
+                  Container(),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            const PlayList()
+          ],
         ),
       ),
     );
