@@ -1,7 +1,7 @@
 import 'package:app/core/configs/theme/app_theme.dart';
 import 'package:app/presentation/choose_mode/bloc/theme_cubit.dart';
 import 'package:app/presentation/splash/pages/splash.dart';
-import 'package:app/service_locator.dart';
+// import 'package:app/service_locator.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
