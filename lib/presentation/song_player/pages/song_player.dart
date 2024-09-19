@@ -1,4 +1,5 @@
 import 'package:app/common/widgets/appbar/app_bar.dart';
+import 'package:app/common/widgets/favorite_button/favorite_button.dart';
 import 'package:app/core/configs/constants/app_urls.dart';
 import 'package:app/core/configs/theme/app_colors.dart';
 import 'package:app/domain/entities/song/song.dart';
@@ -78,13 +79,9 @@ class SongPlayerPage extends StatelessWidget {
             ),
           ],
         ),
-        IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.favorite_outline_outlined,
-              size: 35,
-              color: AppColors.darkGrey,
-            ))
+        FavoriteButton(
+          songEntity: songEntity,
+        )
       ],
     );
   }

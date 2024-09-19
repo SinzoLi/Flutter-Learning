@@ -7,6 +7,8 @@ import 'package:app/presentation/song_player/pages/song_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../common/widgets/favorite_button/favorite_button.dart';
+
 class PlayList extends StatelessWidget {
   const PlayList({super.key});
 
@@ -115,13 +117,9 @@ class PlayList extends StatelessWidget {
                     const SizedBox(
                       width: 20,
                     ),
-                    IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.favorite_outline_outlined,
-                          size: 25,
-                          color: AppColors.darkGrey,
-                        ))
+                    FavoriteButton(
+                      songEntity: songs[index],
+                    )
                   ],
                 )
               ],
